@@ -1,0 +1,2 @@
+tweepy==3.5.0
+git+https://github.com/federicotdn/python-wikiquotes.git@bf0614ce258fae36f3c5352614df25cc7c5c5711
