@@ -40,7 +40,7 @@ def get_quote():
         random.shuffle(quotes)
         for quote in quotes:
             # Assume this is a quote from a character and not a person
-            if ':' in quote[:10]:
+            if ':' in quote[:20]:
                 continue
 
             # Assume this is an external link and not a quote
@@ -48,7 +48,6 @@ def get_quote():
                 continue
 
             # Strip enclosing quotes
-            print(quote)
             if quote[0] == quote[-1] and quote[0] in ('"', "'"):
                 quote = quote[1:-2]
 
@@ -59,6 +58,7 @@ def get_quote():
                 continue
             new_quote = ' \U0001f44f '.join(words)
             if len(new_quote) <= 140:
+                print('Chosen quote from', title)
                 return new_quote
 
     # Couldn't find matching quotes
