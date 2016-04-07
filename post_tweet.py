@@ -15,7 +15,11 @@ ROOT_PATH = os.path.dirname(os.path.abspath(__file__)) + '/'
 bad_words = set(open(ROOT_PATH + 'badwords.txt').read().splitlines())
 
 # Yeah...
-bad_titles = ['hitler', 'kampf']
+bad_titles = [
+    'hitler',
+    'kampf',
+    'greg giraldo',
+]
 
 def get_quote():
     titles = wikiquote.random_titles()
