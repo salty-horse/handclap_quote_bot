@@ -47,6 +47,10 @@ def get_quote():
             if '\n' in quote:
                 continue
 
+            # Not interested in brackets
+            if '[' in quote:
+                continue
+
             # Assume this is a quote from a character and not a person
             if ':' in quote[:20]:
                 continue
