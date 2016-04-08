@@ -32,7 +32,7 @@ def get_quote():
         if any(w in lower_title for w in bad_titles):
             continue
         try:
-            quotes = wikiquote.quotes(title)
+            quotes = wikiquote.quotes(title, max_quotes=1000)
         except (NoSuchPageException, DisambiguationPageException):
             pass
 
@@ -43,6 +43,10 @@ def get_quote():
 
         random.shuffle(quotes)
         for quote in quotes:
+            # Don't use lines of dialogue
+            if '\n' in quote:
+                continue
+
             # Assume this is a quote from a character and not a person
             if ':' in quote[:20]:
                 continue
